@@ -30,5 +30,9 @@
             public void deleteUserById(@PathVariable String id){
                 userService.deleteById(id);
             }
+            @PutMapping("/{id}")
+            public User updateUser(@PathVariable String id, @RequestBody User user) {
+                return userService.update(id, user);
+            }
 
         }

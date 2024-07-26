@@ -28,4 +28,11 @@
         public void deleteById(String id) {
             userRepositry.deleteById(id);
         }
+        public User update(String id, User user) {
+            if (userRepositry.existsById(id)) {
+                user.setId(id);
+                return userRepositry.save(user);
+            }
+            return null;
+        }
     }
